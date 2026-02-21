@@ -33,10 +33,9 @@ const LoginPage = () => {
         borderRadius: '12px', 
         boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)', 
         width: '100%', 
-        maxWidth: '360px', // Slightly narrower card
+        maxWidth: '360px',
         textAlign: 'center'
       }}>
-        {/* Logo Icon */}
         <div style={{ 
           backgroundColor: '#eff6ff', 
           width: '44px', 
@@ -54,10 +53,8 @@ const LoginPage = () => {
         <h1 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '2px', color: '#111827' }}>Welcome Back</h1>
         <p style={{ color: '#6b7280', fontSize: '13px', marginBottom: '24px' }}>Sign in to manage your tasks</p>
         
-        {/* Gap reduced to 12px for a tighter feel */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           
-          {/* Tighter Username Input */}
           <Input 
             placeholder="Username" 
             prefix={<User size={16} style={{ color: '#9ca3af', marginRight: '4px' }} />}
@@ -66,7 +63,6 @@ const LoginPage = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
 
-          {/* Tighter Password Input */}
           <Input.Password
             placeholder="Password"
             prefix={<Lock size={16} style={{ color: '#9ca3af', marginRight: '4px' }} />}
@@ -107,5 +103,6 @@ const LoginPage = () => {
     </div>
   );
 };
+
 
 export default LoginPage;
