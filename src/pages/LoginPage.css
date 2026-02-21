@@ -1,0 +1,129 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* 1. Main Container (login-container) */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8fafc; /* light gray background */
+    padding: 1rem;
+}
+
+/* 2. The Card (auth-card-container) */
+.auth-card-container {
+    background-color: white;
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Wrapper */
+.auth-logo-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: #4f46e5; /* indigo-600 */
+}
+
+/* Headings */
+h1 {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    text-align: center;
+}
+
+p {
+    color: #6b7280; /* text-gray-500 */
+    font-size: 0.875rem; /* text-sm */
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* 3. Form Layout */
+.auth-form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Input Wrappers (relative) */
+.relative {
+    position: relative;
+    width: 100%;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.625rem 1rem 0.625rem 2.5rem; /* pl-10 for icon space */
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem; /* rounded-lg */
+    font-size: 0.875rem;
+    outline: none;
+    transition: all 0.2s;
+}
+
+input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2); /* focus:ring-2 */
+}
+
+/* Icons inside Inputs (absolute) */
+.text-gray-400 { color: #9ca3af; }
+.absolute { position: absolute; }
+.left-3 { left: 0.75rem; }
+.right-3 { right: 0.75rem; }
+.top-3 { top: 0.6rem; } /* Adjusted to center icon vertically */
+.cursor-pointer { cursor: pointer; }
+
+/* 4. Bottom Row (Remember Me / Forgot Password) */
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.text-sm { font-size: 0.875rem; }
+.gap-2 { gap: 0.5rem; }
+
+.text-indigo-600 { color: #4f46e5; text-decoration: none; font-weight: 500; }
+.text-indigo-600:hover { text-decoration: underline; }
+
+/* Checkbox Style */
+input[type="checkbox"] {
+    accent-color: #4f46e5;
+    cursor: pointer;
+}
+
+/* 5. The Login Button */
+button {
+    width: 100%;
+    background-color: #4f46e5; /* bg-indigo-600 */
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.75rem; /* rounded-xl */
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 10px 15px -3px rgba(165, 180, 252, 0.4); /* shadow-indigo-200 */
+}
+
+button:hover {
+    background-color: #4338ca; /* bg-indigo-700 */
+}
+
+/* Bottom Helper Text */
+.text-center { text-align: center; }
+.text-xs { font-size: 0.75rem; }
+.mt-4 { margin-top: 1rem; }
+.italic { font-style: italic; }
