@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Flame, CheckCircle, Clock } from 'lucide-react';
-import './SummaryCards.css'; // Import your new CSS file
+import './SummaryCards.css';
 
 const SummaryCards = () => {
   const tasks = useSelector((state) => state.tasks.items);
@@ -41,5 +41,6 @@ const SummaryCards = () => {
     </section>
   );
 };
+
 
 export default SummaryCards;
