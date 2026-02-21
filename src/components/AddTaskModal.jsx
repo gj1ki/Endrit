@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTask, updateTask } from '../store/taskSlice'; // Import updateTask
+import { addTask, updateTask } from '../store/taskSlice';
 import { X } from 'lucide-react';
 import './AddTaskModal.css';
 
-const AddTaskModal = ({ isOpen, onClose, taskToEdit }) => { // 1. Added taskToEdit prop
+const AddTaskModal = ({ isOpen, onClose, taskToEdit }) => { 
   const dispatch = useDispatch();
   
   const initialForm = { 
@@ -17,7 +17,6 @@ const AddTaskModal = ({ isOpen, onClose, taskToEdit }) => { // 1. Added taskToEd
 
   const [formData, setFormData] = useState(initialForm);
 
-  // 2. This fills the form when taskToEdit changes
   useEffect(() => {
     if (taskToEdit) {
       setFormData(taskToEdit);
@@ -31,7 +30,6 @@ const AddTaskModal = ({ isOpen, onClose, taskToEdit }) => { // 1. Added taskToEd
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // 3. Logic to decide between Adding or Updating
     if (taskToEdit) {
       dispatch(updateTask(formData)); 
     } else {
@@ -50,7 +48,6 @@ const AddTaskModal = ({ isOpen, onClose, taskToEdit }) => { // 1. Added taskToEd
     <div className="modal-overlay">
       <div className="modal-container">
         <header className="modal-header">
-          {/* 4. Dynamic Title */}
           <h2 className="modal-title">{taskToEdit ? 'Edit Task' : 'Add New Task'}</h2>
           <button className="close-btn" onClick={onClose} aria-label="Close">
             <X size={20}/>
@@ -63,7 +60,7 @@ const AddTaskModal = ({ isOpen, onClose, taskToEdit }) => { // 1. Added taskToEd
             <input 
               required 
               name="title"
-              value={formData.title} // 5. Added value so text shows up when editing
+              value={formData.title}
               className="form-input highlight" 
               placeholder="What needs to be done?"
               onChange={handleChange} 
@@ -116,7 +113,6 @@ const AddTaskModal = ({ isOpen, onClose, taskToEdit }) => { // 1. Added taskToEd
               Cancel
             </button>
             <button type="submit" className="btn-primary">
-              {/* 6. Dynamic Button Text */}
               {taskToEdit ? 'Save Changes' : 'Create Task'}
             </button>
           </div>
@@ -125,5 +121,6 @@ const AddTaskModal = ({ isOpen, onClose, taskToEdit }) => { // 1. Added taskToEd
     </div>
   );
 };
+
 
 export default AddTaskModal;
